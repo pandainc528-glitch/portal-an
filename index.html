@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ñan Delivery</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: url('Assect/font.png') no-repeat center/cover;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .hero {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .hero span {
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    .hero h2 {
+      font-size: clamp(32px, 6vw, 70px);
+      margin: 10px 0;
+      letter-spacing: 3px;
+    }
+
+    .hero p {
+      font-size: 14px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      border: 1px solid white;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: white;
+      color: black;
+    }
+
+    .card {
+      margin-top: 30px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 15px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card div {
+      flex: 1 1 200px;
+    }
+
+    .card h4 {
+      margin-bottom: 5px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ÑAN</h1>
+    <nav>
+      <a href="#" onclick="showHome()">Inicio</a>
+      <a href="#" onclick="showAbout()">Sobre</a>
+      <a href="#">Servicio</a>
+      <a href="#">App</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" id="content">
+      <span>LA APP</span>
+      <h2>ÑAN</h2>
+      <p>Descarga nuestra app de delivery y recibe tus pedidos rápido, fácil y seguro en tu ciudad.</p>
+      <button class="btn" onclick="downloadApp()">Descargar App</button>
+
+      <div class="card">
+        <div>
+          <h4>Nuestra misión</h4>
+          <p>Conectar negocios locales con clientes mediante tecnología eficiente.</p>
+        </div>
+        <div>
+          <h4>Nuestra visión</h4>
+          <p>Ser la mejor plataforma de delivery en Ecuador.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function downloadApp() {
+      const link = document.createElement('a');
+      link.href = 'Assect/Ñan_delivery.apk';
+      link.download = 'Ñan_delivery.apk';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    function showHome() {
+      document.getElementById('content').innerHTML = `
+        <span>LA APP</span>
+        <h2>ÑAN</h2>
+        <p>Descarga nuestra app de delivery y recibe tus pedidos rápido, fácil y seguro en tu ciudad.</p>
+        <button class="btn" onclick="downloadApp()">Descargar App</button>
+
+        <div class="card">
+          <div>
+            <h4>Nuestra misión</h4>
+            <p>Conectar negocios locales con clientes mediante tecnología eficiente.</p>
+          </div>
+          <div>
+            <h4>Nuestra visión</h4>
+            <p>Ser la mejor plataforma de delivery en Ecuador.</p>
+          </div>
+        </div>
+      `;
+    }
+
+    function showAbout() {
+      document.getElementById('content').innerHTML = `
+        <div style="background: rgba(0,0,0,0.6); padding: 25px; border-radius: 15px; backdrop-filter: blur(8px);">
+          <h2 style="margin-bottom: 15px;">Delivery Ñan</h2>
+          <p style="margin-bottom: 10px;">
+            Somos una startup joven fundada en 2026 en la ciudad de Ambato, en la zona de Pishilata.
+          </p>
+          <p style="margin-bottom: 10px;">
+            Nuestro objetivo es conectar negocios locales con clientes de forma rápida, segura y eficiente.
+          </p>
+          <p>
+            <strong>Horario:</strong> 7:00 AM - 8:00 PM
+          </p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
