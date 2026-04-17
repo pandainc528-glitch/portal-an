@@ -141,11 +141,11 @@
   <header>
     <h1>ÑAN</h1>
     <nav>
-      <a href="#" onclick="showHome()">Inicio e</a>
+      <a href="#" onclick="showHome()">Inicio</a>
       <a href="#" onclick="showAbout()">Sobre</a>
-      <a href="#">Servicio</a>
-      <a href="#">App</a>
-      <a href="#">Contacto</a>
+      <a href="#" onclick="showServi()">Servicio</a>
+      <a href="#" onclick="">App</a>
+      <a href="#" onclick="">Contacto</a>
     </nav>
   </header>
 
@@ -154,7 +154,7 @@
       <span>LA APP</span>
       <h2>ÑAN</h2>
       <p>Descarga nuestra app de delivery y recibe tus pedidos rápido, fácil y seguro en tu ciudad.</p>
-      <a href="Assect/app.apk" download>
+      <a href="Assect/Ñan_delivery.apk" download>
         <button class="btn" >Descargar App</button>
       </a>
 
@@ -172,14 +172,7 @@
   </main>
 
   <script>
-    function downloadApp() {
-      const link = document.createElement('a');
-      <!-- link.href = 'Assect/Ñan_delivery.apk'; -->
-      link.download = 'Assect/Ñan_delivery.apk';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
+
 
     function showHome() {
       document.getElementById('content').innerHTML = `
@@ -201,12 +194,14 @@
       `;
     }
 
+
+
     function showAbout() {
       document.getElementById('content').innerHTML = `
         <div style="background: rgba(0,0,0,0.6); padding: 25px; border-radius: 15px; backdrop-filter: blur(8px);">
           <h2 style="margin-bottom: 15px;">Delivery Ñan</h2>
           <p style="margin-bottom: 10px;">
-            Somos una startup joven fundada en 2026 en la ciudad de Ambato, en la zona de Pishilata.
+            Somos una startup joven fundada en 2026 en la ciudad de Ambato.
           </p>
           <p style="margin-bottom: 10px;">
             Nuestro objetivo es conectar negocios locales con clientes de forma rápida, segura y eficiente.
@@ -217,6 +212,19 @@
         </div>
       `;
     }
+
+
+    function showServi() {
+      document.getElementById('content').innerHTML = `
+        <div style="background: rgba(0,0,0,0.6); padding: 25px; border-radius: 15px; backdrop-filter: blur(8px);">
+          <h2 style="margin-bottom: 15px;">Delivery Ñan</h2>
+          <p style="margin-bottom: 10px;">
+            Somos una startup joven fundada en 2026 en la ciudad de Ambato.
+          </p>
+        </div>
+      `;
+    }
+
   </script>
 
 </body>
